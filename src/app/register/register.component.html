@@ -1,0 +1,45 @@
+<div class="login-wrap">
+    <h1>Register</h1>
+    <form [formGroup] = "registerForm" (ngSubmit) = "onSubmit()">
+        <div>
+          <input type="text" placeholder="Preferred name" formControlName="firstName">
+          <div *ngIf="registerForm?.get('firstName')?.hasError('required') && registerForm?.get('firstName')?.touched">
+            <p>Please enter preferred name</p>
+          </div>
+          <!-- Email validation -->
+          <input type="email" placeholder="Enter e-mail" formControlName = "email">
+          <div *ngIf="registerForm?.get('email')?.hasError('required') && registerForm?.get('email')?.touched">
+            <p>Email is required!</p>
+          </div>
+          <div *ngIf="registerForm?.get('email')?.hasError('email') && registerForm?.get('email')?.touched">
+            <p>Enter valid email!</p>
+          </div>
+
+          <!-- Password validation -->
+          <input type="password" placeholder="Enter New Password" formControlName="password">
+          <div *ngIf="registerForm?.get('password')?.hasError('required') && registerForm?.get('password')?.touched">
+            <p>Password is required!</p>
+          </div>
+          <div *ngIf="registerForm?.get('password')?.hasError('minlength') && registerForm?.get('password')?.touched">
+            <p>Password must be at least 6 characters long!</p>
+          </div>
+
+          <!-- Confrim password validation -->
+          <input type="password" placeholder="Confirm Password" formControlName="confirmPassword">
+          <div *ngIf="registerForm?.get('confirmPassword')?.hasError('required') && registerForm?.get('confirmPassword')?.touched">
+             <p>Required!</p>
+          </div>
+          <div *ngIf="registerForm?.get('confirmPassword')?.hasError('minlength') && registerForm?.get('confirmPassword')?.touched">
+            <p>Password must be at least 6 characters long!</p>
+          </div>
+          <div *ngIf="registerForm?.hasError('passwordMismatch') && registerForm?.get('confirmPassword')?.touched">
+            <p>Passwords don't match!</p>
+          </div>
+
+          <div class="button-wrap">
+            <button type="submit">Register</button>
+            <button (click)="goBack()">Back</button>
+          </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="formStateService.isWelcomePage">
+    <div class="login-wrap" >
+      <button *ngIf="!formStateService.isComponentActive" (click) = "displayLoginForm()">Login</button> 
+      <p *ngIf="!formStateService.isComponentActive">/</p>
+      <button *ngIf="!formStateService.isComponentActive" (click) = "displayRegisterForm()">Register</button>
+    </div>
+</div> 
+
+<div *ngIf="formStateService.displayLogin">
+    <app-login></app-login>
+</div>
+
+<div *ngIf="formStateService.displayRegister">
+    <app-register></app-register>
+</div>

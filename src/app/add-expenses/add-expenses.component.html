@@ -1,0 +1,81 @@
+<div class="expense-wrap">
+    <h3>Add expense</h3>
+    <form [formGroup] = "addExpenseForm" (ngSubmit) = "onSubmit()">
+        <div>
+            <label class="switch">
+                <input type="checkbox" id="togBtn" formControlName="income_expense">
+                <div class="slider round">
+                 <span class="on" style="float: left;">Income</span>
+                 <span class="off" style="float: right;">Expense</span>
+                </div>
+            </label>
+        </div>
+        <div>
+            <div class="date-label">
+                <i class="pi pi-calendar input" name="date"></i>
+                <label for="date">{{ today }}</label>  
+            </div>
+            <div class="amount-note">
+                <input type="number" placeholder="Enter amount" [value]="0" formControlName = "amount">
+                <div *ngIf="addExpenseForm?.get('amount')?.hasError('required') && addExpenseForm?.get('amount')?.touched">
+                    <p>Amount is required!</p>
+                </div>
+                <div *ngIf="addExpenseForm?.get('amount')?.hasError('min') && addExpenseForm?.get('amount')?.touched">
+                    <p>Enter valid amount!</p>
+                </div>
+            </div>
+            <div *ngIf="addExpenseForm?.get('income_expense')?.value === false">
+                <div class="options">
+                    <label for="categories">Category:</label>
+                    <select name="categories" id="cars" formControlName="category">
+                        <option value="Others" selected>
+                            Others
+                        </option>
+                        <option value="Shopping">
+                            Shopping
+                        </option>
+                        <option value="Bills & Utilities">
+                            Bills & Utilities
+                        </option>
+                        <option value="Education">
+                            Education
+                        </option>
+                        <option value="Medical Expenses">
+                            Medical Expenses
+                        </option>
+                        <option value="Investments">
+                            Investments
+                        </option>
+                        <option value="Food and Dining">
+                            Food and Dining
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="addExpenseForm?.get('income_expense')?.value === true">
+                <div class="options">
+                    <label for="categories">Category:</label>
+                    <select name="categories" id="cars" formControlName="category">
+                        <option value="Others" selected>
+                            Others
+                        </option>
+                        <option value="Salary">
+                            Salary
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="amount-note">  
+                <input type="text" placeholder="Enter note" formControlName = "note" required>
+            </div>
+            <div class="button-wrap">
+                <button type="submit" [disabled] = "addExpenseForm.invalid" title="submit">
+                    <i class="pi pi-check" style="font-size: large; color: green;"></i>
+                </button>
+                <button (click)="cancel()" title="cancel">
+                    <i class="pi pi-times" style="font-size: large; color: red;"></i>
+                </button>
+          </div>
+        </div>
+    </form>
+</div>

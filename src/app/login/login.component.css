@@ -1,0 +1,55 @@
+.login-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button-wrap{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.login-wrap h1{    
+    text-align: center;
+}
+
+.login-wrap label{
+    padding-right: 5px;
+    width: 30%;
+}
+.login-wrap p{
+    color: red;
+    margin-left: .5rem;
+}
+.login-wrap input[type=email], input[type=password] {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 1rem auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+}
+
+.login-wrap form{
+    border: none;
+    width: 30%;
+    margin : 1rem auto;
+    display: flex;
+}
+
+.login-wrap button{
+    background-color: rgb(39, 227, 39);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    margin : 1rem 1rem 1rem 3rem;
+    display: grid;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+  }
+
+  .login-wrap button:hover{
+    color: rgb(222, 245, 187);
+    opacity: .8;
+}

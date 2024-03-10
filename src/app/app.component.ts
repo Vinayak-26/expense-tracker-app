@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormStateService } from './form-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'expense-tracker-app';
+  constructor(
+    public formStateService: FormStateService, private router: Router){}
 }

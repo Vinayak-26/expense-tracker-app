@@ -1,0 +1,38 @@
+<div class="home-wrap" *ngIf="formStateService.activateHome">
+    <div class="banner">
+        <span>{{greeting}},</span>
+        <span> {{firstName}}!</span>
+        <i class="pi pi-search button" title="Search expenses"></i>
+        <i class="pi pi-power-off button" title="Logout" (click)="logout()"></i>
+    </div>
+    <div class="income-expense">
+        <div class="month">
+            <label for="month_display" style="font-size: 20px;">{{currentMonth}}</label>   
+        </div>
+        <div class="ie">
+            <div class="ie-expense">
+                <i class="pi pi-arrow-down arrow" style="color: red;"></i>
+                <div class="ex-label">
+                    <label for="expense" style="font-size: 12px; opacity: .8;">Expense</label>
+                    <label for="expense_amount" style="font-size: 20px;">&#x20B9;{{ expenseTotal }}</label>
+                </div>
+            </div>
+            <div class="ie-income">
+                <i class="pi pi-arrow-up arrow" style="color: green;"></i>
+                <div class="i-label">
+                    <label for="income" style="font-size: 12px; opacity: .8;">Income</label>
+                    <label for="income_amount" style="font-size: 20px;">&#x20B9;{{ incomeTotal }}</label>
+                </div>
+            </div>
+        </div>
+        <div class="balance">
+            <label for="balance">Balance: &#x20B9;{{ balance }}</label>
+        </div>
+    </div>
+    <div class="expenses-list">
+        <app-expense-list></app-expense-list>
+    </div>
+    <div class="bottom-banner">
+        <i class="pi pi-plus button" title="Add expenses" (click)="addExpense()"></i>
+    </div>
+</div>

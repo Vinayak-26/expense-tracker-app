@@ -1,0 +1,25 @@
+.login-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrap button{
+    margin: 100px 5px;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 32px;
+    color: white;
+    background-color: rgb(39, 227, 39);
+}
+.login-wrap button:hover{
+    color: rgb(222, 245, 187);
+    opacity: .8;
+}
+   
+.login-wrap p{
+    font-size: 50px;
+    margin: 0 5px;
+    color: rgb(20, 121, 20);
+}

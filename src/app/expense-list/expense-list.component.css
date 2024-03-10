@@ -1,0 +1,91 @@
+@import "primeicons/primeicons.css";
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+}
+.heading h3{
+    font-size: large;
+    background-color: rgb(206, 186, 86);
+    display: inline-block;
+    width: 100%;
+    padding: 2px 5px 2px 5px;
+    margin-right: 1rem;
+    border-radius: 5px;
+  }
+.active-list {
+    column-count: 2;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    overflow: auto;
+    padding: 20px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid rgb(34, 31, 8);
+}
+.active-list::-webkit-scrollbar{
+    width: 10px;
+    padding: 10px;
+
+}
+.active-list::-webkit-scrollbar-thumb{
+    background: blueviolet; 
+    border-radius: 5px;
+}
+.list-item{
+    display: inline-block;
+    flex-direction: column;
+    margin-top: .5rem;
+    width: 600px;
+}
+.item {
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    box-shadow: 2px 2px 3px rgb(180, 178, 178);
+}
+.amount{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    flex: 1;
+    padding: 2px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+.note{
+    font-size: large;
+    margin-top: 4px; 
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    align-items: right;
+    font-size: large;
+}
+.edit-delete{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+}
+.edit-delete i:hover{
+    opacity: .8;
+    transform: scale(1.5);
+}
+.bottom-banner i:active{
+    transform: translateY(4px);
+    transition: ease-out;
+}
+.grid-item{
+    text-align: center;
+    padding: 5px;
+}

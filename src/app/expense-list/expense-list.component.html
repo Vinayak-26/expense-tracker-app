@@ -1,0 +1,29 @@
+<ul class="active-list">
+    <div class="heading">
+      <h3>Expenses</h3>
+    </div>
+    <div class="list-item">
+      <li class="item" *ngFor="let expense of expenseData">
+        <div class="amount"
+        [ngStyle]="{'color': expense.income_expense === true ? 'green' :'red'}">
+          <span>&#x20B9;{{ expense.amount }}</span>
+        
+          <div class="note" style="color: black;">
+            <span>{{ expense.note }}</span>
+          </div>
+        </div>
+        <div class="date">
+            <span>{{expense.date | date: 'dd-MM-yyyy' }}</span>
+        </div>
+        <div class="edit-delete">
+          <div class="grid-item">  
+            <i class="pi pi-pencil button" (click)="onEdit(expense.expense_id)" title="Edit"></i>
+          </div>  
+          <div class="grid-item">  
+            <i class="pi pi-times button" title="Delete"></i>
+          </div>
+        </div>
+      </li>
+  </div>
+</ul>
+  
